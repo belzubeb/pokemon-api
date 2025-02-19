@@ -7,7 +7,7 @@ import SkeletonCard from '../components/SkeletonCard';
 import SearchBar from '../components/SearchBar'; 
 
 const HomePage = () => {
-  const [limit, setLimit] = useState(50); 
+  const [limit, setLimit] = useState(51); 
   const [filterType, setFilterType] = useState<string>('all'); 
   const [searchTerm, setSearchTerm] = useState<string>(''); // 🔍 State pencarian
   const { pokemons, loading, error } = useFetchPokemon(filterType === 'all' ? limit : 2000);
