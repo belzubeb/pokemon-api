@@ -13,8 +13,7 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
       <h1 className="text-xl font-bold capitalize">{pokemon.name}</h1>
 
       {pokemon.sprites?.front_default ? (
-        <img
-          src={pokemon.sprites.front_default}alt={`Image of ${pokemon.name}`}className="w-32 h-32 object-contain"/>
+        <img src={pokemon.sprites.front_default}alt={`Image of ${pokemon.name}`}className="w-32 h-32 object-contain"/>
       ) : (
         <div className="w-32 h-32 flex items-center justify-center bg-gray-100 rounded-md">
           <span className="text-gray-500 text-sm">No Image</span>
