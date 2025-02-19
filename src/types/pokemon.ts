@@ -6,6 +6,7 @@ export interface PokemonType {
 
 export interface PokemonSprites {
   front_default: string;
+  front_shiny?: string;
 }
 
 export interface Pokemon {

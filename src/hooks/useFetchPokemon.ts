@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Pokemon } from '../types/pokemon';
 
-const useFetchPokemon = (limit: number = 10) => {
+const useFetchPokemon = (limit: number) => {
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -9,6 +9,7 @@ const useFetchPokemon = (limit: number = 10) => {
   useEffect(() => {
     const fetchPokemonList = async () => {
       try {
+        setLoading(true);
         const res = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}`);
         if (!res.ok) throw new Error('Failed to fetch Pokémon list');
         
