@@ -1,0 +1,21 @@
+export const POKEMON_TYPE_COLORS: Record<string, string> = {
+    fire: "bg-red-500",
+    water: "bg-blue-500",
+    grass: "bg-green-500",
+    electric: "bg-yellow-500",
+    psychic: "bg-purple-500",
+    ice: "bg-cyan-400",
+    fighting: "bg-orange-700",
+    poison: "bg-purple-600",
+    ground: "bg-yellow-700",
+    flying: "bg-indigo-400",
+    bug: "bg-lime-600",
+    rock: "bg-gray-600",
+    ghost: "bg-indigo-700",
+    dragon: "bg-indigo-800",
+    dark: "bg-gray-900",
+    steel: "bg-gray-500",
+    fairy: "bg-pink-400",
+    normal: "bg-gray-400",
+  };
+  

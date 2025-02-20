@@ -12,12 +12,23 @@ const useFetchPokemon = (limit: number) => {
         setLoading(true);
         const res = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}`);
         if (!res.ok) throw new Error('Failed to fetch Pokémon list');
-        
+
         const { results } = await res.json();
         const pokemonDetails: Pokemon[] = await Promise.all(
           results.map(async (pokemon: { url: string }) => {
             const response = await fetch(pokemon.url);
-            return response.json();
+            if (!response.ok) throw new Error(`Failed to fetch ${pokemon.url}`);
+            const data = await response.json();
+
+            return {
+              id: data.id,
+              name: data.name,
+              height: data.height, 
+              weight: data.weight, 
+              sprites: data.sprites,
+              types: data.types,
+              stats: data.stats, 
+            };
           })
         );
 
