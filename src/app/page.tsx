@@ -1,11 +1,12 @@
-'use client';
+'use client'
 
 import React, { useState } from 'react';
 import useFetchPokemon from '../hooks/useFetchPokemon';
 import PokemonCard from '../components/PokemonCard';
 import SkeletonCard from '../components/SkeletonCard';
 import SearchBar from '../components/SearchBar';
-import FilterType from '../components/FilterType'; // Import komponen baru
+import FilterType from '../components/FilterType';
+// import Link from 'next/link';
 
 const HomePage = () => {
   const [limit, setLimit] = useState(51);
@@ -21,6 +22,14 @@ const HomePage = () => {
   return (
     <div className="p-4">
       <h1 className="text-2xl font-bold text-center">Pokédex</h1>
+
+      {/* <div className="text-center my-4">
+        <Link href="/objects">
+          <button className="bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-green-600 transition">
+            Go to Objects Page
+          </button>
+        </Link>
+      </div> */}
 
       <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
       
@@ -41,8 +50,7 @@ const HomePage = () => {
         <div className="text-center mt-6">
           <button
             onClick={() => setLimit(prevLimit => prevLimit + 12)}
-            className="bg-blue-500 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-blue-600 transition"
-          >
+            className="bg-blue-500 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-blue-600 transition">
             Load More
           </button>
         </div>

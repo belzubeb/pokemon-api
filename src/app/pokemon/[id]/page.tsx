@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { useParams } from "next/navigation";
 import useFetchPokemonDetail from "@/hooks/useFetchPokemonDetail";
@@ -14,12 +14,10 @@ const PokemonDetail = () => {
 
   return (
     <div className="max-w-3xl mx-auto p-8 bg-white shadow-2xl rounded-2xl border border-gray-200">
-      {/* Nama Pokémon */}
       <h1 className="text-5xl font-bold capitalize text-center text-gray-800 drop-shadow-md">
         {pokemon?.name}
       </h1>
 
-      {/* Gambar Pokémon */}
       <div className="flex justify-center my-8">
         {pokemon?.sprites?.front_default && (
           <img
@@ -30,13 +28,11 @@ const PokemonDetail = () => {
         )}
       </div>
 
-      {/* Berat & Tinggi */}
       <div className="flex justify-center gap-6 text-lg font-medium text-gray-700">
         <p>⚖️ <span className="font-bold">{pokemon?.weight ? `${pokemon.weight / 10} kg` : "N/A"}</span></p>
         <p>📏 <span className="font-bold">{pokemon?.height ? `${pokemon.height / 10} m` : "N/A"}</span></p>
       </div>
 
-      {/* Tipe Pokémon */}
       <div className="flex justify-center gap-3 mt-6">
         {pokemon?.types?.map((type, index) => (
           <span
@@ -50,7 +46,6 @@ const PokemonDetail = () => {
         ))}
       </div>
 
-      {/* Statistik Pokémon */}
       <div className="mt-8">
         <h2 className="text-3xl font-semibold text-center mb-4 text-gray-800">Stats</h2>
         <div className="space-y-3">
