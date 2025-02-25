@@ -6,7 +6,7 @@ import PokemonCard from '../components/PokemonCard';
 import SkeletonCard from '../components/SkeletonCard';
 import SearchBar from '../components/SearchBar';
 import FilterType from '../components/FilterType';
-// import Link from 'next/link';
+import Link from 'next/link';
 
 const HomePage = () => {
   const [limit, setLimit] = useState(51);
@@ -23,13 +23,13 @@ const HomePage = () => {
     <div className="p-4">
       <h1 className="text-2xl font-bold text-center">Pokédex</h1>
 
-      {/* <div className="text-center my-4">
+      <div className="text-center my-4">
         <Link href="/objects">
           <button className="bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-green-600 transition">
             Go to Objects Page
           </button>
         </Link>
-      </div> */}
+      </div>
 
       <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
       

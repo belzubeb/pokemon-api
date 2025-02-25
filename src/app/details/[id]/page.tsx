@@ -33,7 +33,10 @@ const ObjectDetailPage = () => {
         <div className="mt-4 space-y-2">
           {object?.data &&
             Object.entries(object.data).map(([key, value]) => (
-              <div key={key} className="bg-blue-100 text-blue-800 text-sm font-medium px-4 py-2 rounded-md">
+              <div
+                key={key}
+                className="bg-blue-100 text-blue-800 text-sm font-medium px-4 py-2 rounded-md"
+              >
                 {key}: {String(value)}
               </div>
             ))}
@@ -45,8 +48,15 @@ const ObjectDetailPage = () => {
           >
             Back
           </button>
+          <Link href={`/details/${id}/edit`}>
+            <button className="bg-yellow-500 text-white px-4 py-2 rounded-md">
+              Edit
+            </button>
+          </Link>
           <Link href="/objects">
-            <button className="bg-blue-500 text-white px-4 py-2 rounded-md">Go to Objects List</button>
+            <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
+              Go to Objects List
+            </button>
           </Link>
         </div>
       </div>
