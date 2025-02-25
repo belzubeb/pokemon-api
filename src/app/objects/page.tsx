@@ -25,7 +25,7 @@ const ObjectsPage = () => {
           : objects.map((obj) => <ObjectCard key={obj.id} object={obj} />)}
       </div>
     </div>
-  );
+  ); 
 };
 
 export default ObjectsPage;

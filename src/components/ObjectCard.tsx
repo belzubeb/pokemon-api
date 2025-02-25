@@ -7,7 +7,7 @@ interface ObjectCardProps {
 
 const ObjectCard: React.FC<ObjectCardProps> = ({ object }) => {
   return (
-    <Link href={`/objects/${object.id}`}>
+    <Link href={`/details/${object.id}`}>
       <div className="cursor-pointer bg-white shadow-md hover:shadow-xl transition-shadow duration-300 rounded-xl p-5 border border-gray-200">
         <h2 className="text-xl font-semibold text-gray-900">{object.name}</h2>
         {object.data ? (

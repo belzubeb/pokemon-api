@@ -6,14 +6,13 @@ const useObjects = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // 🚀 Fungsi untuk fetch data dari API
   const fetchObjects = async () => {
     setLoading(true);
     setError(null);
 
     try {
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/objects`, {
-        cache: "no-store", // 🔥 Mencegah caching
+        cache: "no-store", 
       });
 
       if (!response.ok) {
@@ -23,8 +22,7 @@ const useObjects = () => {
       const data: ObjectData[] = await response.json();
       console.log("✅ Fetched Objects:", data);
 
-      // 🚀 Paksa update state dengan cara yang lebih agresif
-      setObjects([...data]); // Membuat array baru agar React mendeteksi perubahan
+      setObjects([...data]);
     } catch (err) {
       console.error("❌ Fetch Objects Failed:", err);
       setError((err as Error).message);
@@ -34,7 +32,7 @@ const useObjects = () => {
   };
 
   useEffect(() => {
-    fetchObjects(); // Ambil data saat pertama kali di-load
+    fetchObjects();
   }, []);
 
   return { objects, loading, error, fetchObjects };
